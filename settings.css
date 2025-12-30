@@ -22,6 +22,7 @@ body {
     padding: 30px 25px;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+     margin: 100px auto; 
 }
 
 /* Title */
