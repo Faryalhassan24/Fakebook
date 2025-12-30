@@ -28,7 +28,7 @@ if (isset($_POST["postBtn"])) {
     if (!empty($_FILES['post_video']['name'])) {
         $vidName = time() . '_' . basename($_FILES['post_video']['name']);
         $vidTmp  = $_FILES['post_video']['tmp_name'];
-        $videoPath = "upload/" . $vidName;
+        $videoPath = "uploads/" . $vidName;
         move_uploaded_file($vidTmp, $videoPath);
     }
 
