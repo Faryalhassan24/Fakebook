@@ -4,12 +4,12 @@ followButtons.forEach(btn => {
     btn.addEventListener('click', function () {
 
         if (btn.innerText === 'Follow') {
-            btn.innerText = 'Requested';
-            btn.classList.add('requested');
+            btn.innerText = 'unfollowed';
+            btn.classList.add('unfollowed');
         } 
         else {
             btn.innerText = 'Follow';
-            btn.classList.remove('requested');
+            btn.classList.remove('unfollowed');
         }
 
     });

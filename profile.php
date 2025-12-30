@@ -47,6 +47,8 @@ $profile_pic = $row['profile_pic'] ?? 'images/Default_pfp.jpg';
         <h4>Post</h4>
     </div>
 
+    
+
     <div class="friend-count">
         <p>0</p>
         <h4>Friends</h4>
@@ -84,6 +86,7 @@ $profile_pic = $row['profile_pic'] ?? 'images/Default_pfp.jpg';
     }
     ?>
 </div>
+<script src="Follow-request.js"></script>
 
 <style>
 .profile-circle {
@@ -91,7 +94,6 @@ $profile_pic = $row['profile_pic'] ?? 'images/Default_pfp.jpg';
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #555;
     margin-bottom: 10px;
 }
 .profile-circle img {

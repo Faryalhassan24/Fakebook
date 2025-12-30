@@ -48,15 +48,36 @@ if(isset($_POST['uploadBtn'])){
 <head>
     <meta charset="UTF-8">
     <title>Change Profile Picture</title>
+    <link rel="stylesheet" href="settings.css">
+    <style>
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            color: green;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+    </style>
 </head>
 <body>
-    <h2>Change Profile Picture</h2>
-    <?php if($success) echo "<p>$success</p>"; ?>
-    <form method="post" enctype="multipart/form-data">
-        <input type="file" name="profile_image" accept="image/*" required>
-        <button type="submit" name="uploadBtn">Upload</button>
-    </form>
-    <br>
-    <a href="master.php?page=profile">Back to Profile</a>
+    <div class="container">
+        <h2>Change Profile Picture</h2>
+        <?php if(isset($success) && $success) echo "<p>$success</p>"; ?>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="profile_image" accept="image/*" required>
+            <button type="submit" name="uploadBtn" class="btn primary">Upload</button>
+        </form>
+        <br>
+        <a href="master.php?page=settings" class="btn secondary">Back to Settings</a>
+    </div>
 </body>
 </html>

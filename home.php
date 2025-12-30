@@ -19,11 +19,11 @@ if (isset($_POST["postBtn"])) {
         $imgName = time() . '_' . basename($_FILES['post_image']['name']);
         $imgTmp  = $_FILES['post_image']['tmp_name'];
 
-        $imagePath = "uploads/" . $imgName;  
+        $imagePath = "uploads/" . $imgName;
         move_uploaded_file($imgTmp, $imagePath);
     }
 
-   
+
 
     if (!empty($_FILES['post_video']['name'])) {
         $vidName = time() . '_' . basename($_FILES['post_video']['name']);
@@ -41,7 +41,15 @@ if (isset($_POST["postBtn"])) {
     }
 }
 ?>
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
 
     <!-- Main Content -->
     <div class="main">
@@ -104,4 +112,6 @@ if (isset($_POST["postBtn"])) {
         </div>
     </div>
 </div>
-</div>
+</body>
+<script src="Follow-request.js"></script>
+</html>
