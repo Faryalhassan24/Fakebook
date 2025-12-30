@@ -14,7 +14,7 @@
         <h2 class="settings-title">⚙️ Account Settings</h2>
 
         <div class="settings-menu">
-            <a href="change_profile_image.php" class="settings-item">
+            <a href="profile picture.php" class="settings-item">
                 <i class="fa-solid fa-user"></i>
                 <span>Change Profile Picture</span>
                 <i class="fa-solid fa-chevron-right"></i>

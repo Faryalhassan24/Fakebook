@@ -1,6 +1,13 @@
 <?php
 include("database.php");
 
+if(!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
 // DELETE POST
 if (isset($_GET["delete"])) {
     $pid = $_GET["delete"];
@@ -8,10 +15,20 @@ if (isset($_GET["delete"])) {
     $sql->bind_param("ii", $pid, $user_id);
     $sql->execute();
 }
+
+// Fetch profile picture from userdata table
+$stmt = $conn->prepare("SELECT profile_pic FROM userdata WHERE user_id=?");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$profile_pic = $row['profile_pic'] ?? 'images/Default_pfp.jpg';
 ?>
 
 <div class="center-bar">
-    <img src="images/Default_pfp.jpg" alt="Profile Image">
+    <div class="profile-circle">
+        <img src="<?php echo $profile_pic; ?>" alt="Profile Image">
+    </div>
 
     <?php
     // Count posts of logged-in user
@@ -67,3 +84,19 @@ if (isset($_GET["delete"])) {
     }
     ?>
 </div>
+
+<style>
+.profile-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #555;
+    margin-bottom: 10px;
+}
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>

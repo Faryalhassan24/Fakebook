@@ -1,5 +1,45 @@
 <?php
 include("database.php");
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: login.php");
+    exit();
+}
+
+$user_id = $_SESSION["user_id"];
+$username = $_SESSION["username"];
+
+if (isset($_POST["postBtn"])) {
+    $content = trim($_POST["content"]);
+    $imagePath = null;
+    $videoPath = null;
+
+    if (!empty($_FILES['post_image']['name'])) {
+
+        $imgName = time() . '_' . basename($_FILES['post_image']['name']);
+        $imgTmp  = $_FILES['post_image']['tmp_name'];
+
+        $imagePath = "uploads/" . $imgName;  
+        move_uploaded_file($imgTmp, $imagePath);
+    }
+
+   
+
+    if (!empty($_FILES['post_video']['name'])) {
+        $vidName = time() . '_' . basename($_FILES['post_video']['name']);
+        $vidTmp  = $_FILES['post_video']['tmp_name'];
+        $videoPath = "upload/" . $vidName;
+        move_uploaded_file($vidTmp, $videoPath);
+    }
+
+    if ($content != "" || $imagePath || $videoPath) {
+        $stmt = $conn->prepare("INSERT INTO posts (user_id, content, post_image, post_video, created_at) VALUES (?, ?, ?, ?, NOW())");
+        $stmt->bind_param("isss", $user_id, $content, $imagePath, $videoPath);
+        $stmt->execute();
+        header("Location: master.php");
+        exit();
+    }
+}
 ?>
 <div class="container">
 

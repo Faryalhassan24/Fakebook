@@ -26,7 +26,7 @@ if (isset($_POST["postBtn"])) {
     if (!empty($_FILES['post_video']['name'])) {
         $vidName = time() . '_' . basename($_FILES['post_video']['name']);
         $vidTmp  = $_FILES['post_video']['tmp_name'];
-        $videoPath = "upload/" . $vidName;
+        $videoPath = "uploads/" . $vidName;
         move_uploaded_file($vidTmp, $videoPath);
     }
 
@@ -35,7 +35,7 @@ if (isset($_POST["postBtn"])) {
         $sql = "INSERT INTO posts (user_id, content, post_image, post_video, created_at) 
                 VALUES ('$user_id','$content','$imagePath','$videoPath',NOW())";
         mysqli_query($conn, $sql);
-        header("Location: index.php");
+        header("Location: master.php?page=home");
         exit();
     }
 }
@@ -54,7 +54,7 @@ if (isset($_POST["postBtn"])) {
 
     <form action="#" method="post" enctype="multipart/form-data">
         <label for="post">Write a Post</label><br>
-        <textarea name="content" id="post" placeholder="Write a post..." rows="5" required></textarea> <br><br>
+        <textarea name="content" id="post" placeholder="Write a post..." rows="5"></textarea> <br><br>
 
         <label>Upload Image:</label>
         <input type="file" name="post_image" accept="image/*"><br><br>

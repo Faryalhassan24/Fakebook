@@ -3,7 +3,7 @@ session_start();
 include("database.php");
 
 if (!isset($_SESSION["user_id"])) {
-    header("Location: login.php");
+    header("Location: master.php");
     exit();
 }
 
@@ -29,7 +29,7 @@ if (isset($_POST["updateBtn"])) {
     $update->bind_param("sii", $content, $post_id, $user_id);
 
     if ($update->execute()) {
-        header("Location: profile.php");
+        header("Location: master.php?page=profile");
         exit();
     } else {
         echo "Update failed!";

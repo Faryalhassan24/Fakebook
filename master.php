@@ -33,14 +33,14 @@ $username = $_SESSION["username"];
 
             switch ($page) {
                 case 'profile':
-                    include("profile.php");  // Only content for profile
+                    include("profile.php");  
                     break;
                 case 'settings':
-                    include("settingsold.php");  // Only content for settings
+                    include("settingsold.php"); 
                     break;
                 case 'home':
                 default:
-                    include("home.php");  // Only content for home
+                    include("home.php");  
                     break;
             }
             ?>

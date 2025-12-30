@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2025 at 01:21 PM
+-- Generation Time: Dec 30, 2025 at 01:05 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,20 +32,18 @@ CREATE TABLE `userdata` (
   `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `DateRegistered` datetime NOT NULL
+  `DateRegistered` datetime NOT NULL,
+  `profile_pic` varchar(255) DEFAULT 'images/Default_pfp.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `userdata`
 --
 
-INSERT INTO `userdata` (`user_id`, `email`, `username`, `password`, `DateRegistered`) VALUES
-(3, 'umer.momo13@gmail.com', 'umerali', '$2y$10$JJSgozf4apNbZLpg/LZUjeo3T1p6W6yux2R/1moUf2ZH63sPDVcxm', '2025-12-08 21:46:57'),
-(4, 'shaky@shaky.com', 'shaky', '$2y$10$VdNcikrzluss6lKHjU/EOeR7c56F.3mVL/zF3RDC/ALBcAJ3X2gYS', '2025-12-08 21:49:47'),
-(5, 'umer@ali.com', 'umerali', '$2y$10$Q9.KXOPMRx4lod0wSycLDOB18BhaT5PQnHGsB01BM.EhHwdJPi.y6', '2025-12-08 21:55:18'),
-(6, 'aumer0201@gmail.com', 'umerali2', '$2y$10$4ft1Uzct6mjCJ/CYBt65ROSsA7nBHli77lqzpIu.OwTJgJPPdZkuu', '2025-12-08 22:00:03'),
-(7, 'asd@asd.com', 'asd', '$2y$10$8EDoq.aNOJ3Fs6ddnkZ5I.ioq9LqTXAtSwOLn2QgQVC/095O/netS', '0000-00-00 00:00:00'),
-(8, 'shaky@bhai.com', 'shakybhai44', '$2y$10$xr3VlxyXNL2T7cWmBd3eaeMZGYrwem8QzPVkDavmgxgB3GcDYaoCS', '0000-00-00 00:00:00');
+INSERT INTO `userdata` (`user_id`, `email`, `username`, `password`, `DateRegistered`, `profile_pic`) VALUES
+(1, 'faryal@example.com', 'Faryal Hassan', '$2y$10$G6OP/YRfC.39fD26qzVX1uSyncWp3ot5SZTixawoE2IMPTGi/H3wi', '0000-00-00 00:00:00', 'images/6953bff3467ee2.33223493.png'),
+(2, 'umer@example.com', 'Umer Ali', '$2y$10$AwhmbPnnoRnkdAFVvNlRGO/T2aCeRdT3aSsPAhyYigSc3kmBDYmE6', '0000-00-00 00:00:00', 'images/Default_pfp.jpg'),
+(3, 'hash@example.com', 'Hash khan', '$2y$10$B91zPRzTmgdn3fnsZBz8zucbzjjNyBO.iMYIGytSv.zaGoHSDFWH2', '0000-00-00 00:00:00', 'images/Default_pfp.jpg');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +63,7 @@ ALTER TABLE `userdata`
 -- AUTO_INCREMENT for table `userdata`
 --
 ALTER TABLE `userdata`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
