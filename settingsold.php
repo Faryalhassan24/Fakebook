@@ -53,10 +53,6 @@ toggle.addEventListener("change", function () {
         settingsBox.classList.remove("dark");
     }
 });
-</script>
-
-</script>
-
 
 </script>
 
