@@ -11,6 +11,10 @@ $user_id = $_SESSION['user_id'];
 // DELETE POST
 if (isset($_GET["delete"])) {
     $pid = $_GET["delete"];
+    // echo "<script>
+    //         if(confirm('Are you sure you want to delete this post?')) {
+    //         }
+    //       </script>";
     $sql = $conn->prepare("DELETE FROM posts WHERE id = ? AND user_id = ?");
     $sql->bind_param("ii", $pid, $user_id);
     $sql->execute();
