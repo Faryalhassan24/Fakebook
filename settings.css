@@ -14,6 +14,10 @@ body {
     align-items: center;
     min-height: 100vh;
 }
+.settings-container.dark {
+    background: black;
+    color: white;
+}
 
 /* Settings Container */
 .settings-container {
@@ -33,6 +37,7 @@ body {
     color: #333;
     font-weight: 600;
 }
+
 
 /* Settings Menu */
 .settings-menu {
@@ -148,3 +153,4 @@ input:checked + .slider {
 input:checked + .slider::before {
     transform: translateX(21px);
 } 
+

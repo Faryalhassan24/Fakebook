@@ -42,4 +42,23 @@
 
 </body>
 <script src="Follow-request.js"></script>
+<script>
+const toggle = document.getElementById("themeToggle");
+const settingsBox = document.querySelector(".settings-container");
+
+toggle.addEventListener("change", function () {
+    if (this.checked) {
+        settingsBox.classList.add("dark");
+    } else {
+        settingsBox.classList.remove("dark");
+    }
+});
+</script>
+
+</script>
+
+
+</script>
+
+
 </html>
