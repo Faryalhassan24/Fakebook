@@ -47,13 +47,12 @@ $profile_pic = $row['profile_pic'] ?? 'images/Default_pfp.jpg';
         <h4>Post</h4>
     </div>
 
-    
-
+     
     <div class="friend-count">
         <p>0</p>
         <h4>Friends</h4>
     </div>
-</div>
+</div> 
 
 <h3>Your Posts</h3>
 <div class="posts-container">
@@ -65,7 +64,7 @@ $profile_pic = $row['profile_pic'] ?? 'images/Default_pfp.jpg';
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $image_html = !empty($row["post_image"]) ? "<img src='{$row["post_image"]}' width='300'>" : "";
+            $image_html = !empty($row["post_image"]) ? "<img src='{$row["post_image"]}'>" : "";
             $video_html = !empty($row["post_video"]) ? "<video width='300' controls><source src='{$row["post_video"]}' type='video/mp4'></video>" : "";
 
             echo "

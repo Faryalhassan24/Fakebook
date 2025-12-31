@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sidebar</title>
     <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="sidebar">
@@ -29,17 +30,18 @@
             $stmt->execute();
             $users = $stmt->get_result();
 
-            if ($users->num_rows > 0) {
-                while ($row = $users->fetch_assoc()) {
-                    echo "<div class='follow-user'>";
-                    echo "<span>" .$row['username'] . "</span>";
-                    echo " <button class='follow-button'>Follow</button>";
-                    echo "</div>";
-                }
-            } else {
-                echo "<p>No users to suggest.</p>";
-            }
-            ?>
+if ($users->num_rows > 0) {
+    while ($row = $users->fetch_assoc()) {
+        echo "<div class='follow-user'>";
+        echo "<span>" .$row['username'] . "</span>";
+        echo " <button class='follow-button' data-username='" .$row['username'] . "'>Follow</button>";
+        echo "</div>";
+    }
+} else {
+    echo "<p>No users to suggest.</p>";
+}
+?>
+
         </div>
          <hr>
         <a class="side-link" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
