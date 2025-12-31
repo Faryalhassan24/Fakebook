@@ -1,23 +1,14 @@
 <?php
 $dbhost = "localhost";
-$dbserver = "root";
+$dbuser = "root";
 $password = "";
 $dbname = "loginsystem";
-$conn = "";
 
-try {
-    $conn = mysqli_connect($dbhost, $dbserver, $password, $dbname);
-} catch (mysqli_sql_exception) {
-    echo "Database error";
+// Connect
+$conn = mysqli_connect($dbhost, $dbuser, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
 }
-
-
-if ($conn) {
-    echo "";
-} else {
-    echo "Database connection failed";
-}
-
 ?>
-
-

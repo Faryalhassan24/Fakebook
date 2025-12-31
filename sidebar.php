@@ -1,4 +1,13 @@
-<div class="sidebar">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidebar</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="sidebar">
     <div class="part1">
         <h2><?php echo htmlspecialchars($username); ?></h2>
         <hr>
@@ -36,3 +45,7 @@
         <a class="side-link" href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
     </div>
 </div>
+
+</body>
+<script src ="theme.js"></script>
+</html>
