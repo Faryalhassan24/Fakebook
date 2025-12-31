@@ -32,7 +32,7 @@
             if ($users->num_rows > 0) {
                 while ($row = $users->fetch_assoc()) {
                     echo "<div class='follow-user'>";
-                    echo "<span>" . htmlspecialchars($row['username']) . "</span>";
+                    echo "<span>" .$row['username'] . "</span>";
                     echo " <button class='follow-button'>Follow</button>";
                     echo "</div>";
                 }
@@ -47,5 +47,5 @@
 </div>
 
 </body>
-<script src ="theme.js"></script>
+
 </html>

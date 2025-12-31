@@ -79,16 +79,16 @@ if (isset($_POST["postBtn"])) {
             while ($row = $all->fetch_assoc()) {
                 echo "<div class='post'>
                     <div class='post-header'>
-                        <span class='username'>" . htmlspecialchars($row['username']) . "</span>
+                        <span class='username'>" . $row['username'] . "</span>
                         <small class='post-time'>" . $row['created_at'] . "</small>
                     </div>
-                    <p class='post-content'>" . htmlspecialchars($row['content']) . "</p>";
+                    <p class='post-content'>" . $row['content'] . "</p>";
 
                 if ($row['post_image']) {
-                    echo "<img src='" . htmlspecialchars($row['post_image']) . "' class='post-media'>";
+                    echo "<img src='" . $row['post_image']. "' class='post-media'>";
                 }
                 if ($row['post_video']) {
-                    echo "<video src='" . htmlspecialchars($row['post_video']) . "' controls class='post-media'></video>";
+                    echo "<video src='" . $row['post_video'] . "' controls class='post-media'></video>";
                 }
                 echo "</div>";
             }

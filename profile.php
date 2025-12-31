@@ -70,7 +70,7 @@ $profile_pic = $row['profile_pic'] ?? 'images/Default_pfp.jpg';
 
             echo "
             <div class='post'>
-                <p>" . htmlspecialchars($row["content"]) . "</p>
+                <p>" .$row["content"]. "</p>
                 $image_html
                 $video_html
                 <small>" . $row["created_at"] . "</small>
